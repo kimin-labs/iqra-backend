@@ -3,10 +3,12 @@ from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3, os, re, json, urllib.request, urllib.error, urllib.parse
 from datetime import datetime
+import os
 
 app = Flask(__name__, static_folder=None)
 app.secret_key = 'iqra-ai-secret-change-in-production'
 CORS(app, supports_credentials=True)
+SITE_URL = os.environ.get("SITE_URL", "http://localhost:5000")
 
 FRONTEND_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 DB_PATH = os.path.join(os.path.dirname(__file__), 'iqra.db')
@@ -260,13 +262,13 @@ def get_ai_response(message, conversation_history=None):
         "max_tokens": 3000
     }).encode()
 
-    req = urllib.request.Request(OPENROUTER_URL, data=payload,
-        headers={
-            'Content-Type': 'application/json',
-            'Authorization': f'Bearer {API_KEY}',
-            'HTTP-Referer': 'http://localhost:5000',
-            'X-Title': 'Iqra AI'
-        })
+req = urllib.request.Request(OPENROUTER_URL, data=payload,
+    headers={
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {API_KEY}',
+        'HTTP-Referer': SITE_URL,
+        'X-Title': 'Iqra AI'
+    })
 
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
