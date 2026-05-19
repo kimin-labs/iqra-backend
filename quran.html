@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iqra AI — Quran</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="dns-prefetch" href="https://cdn.islamic.app">
+    <link rel="dns-prefetch" href="https://api.alquran.cloud">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="quran">
+
+    <nav class="navbar glass" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-mosque"></i>
+                <span>Iqra AI</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="prayer.html">Prayer Times</a>
+                <a href="quran.html" class="active">Quran</a>
+                <a href="prophets.html">Prophet Stories</a>
+                <a href="reminder.html">Daily Reminder</a>
+                <a href="support.html">Student Support</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-primary nav-login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="quran-layout">
+        <aside class="quran-sidebar" id="quranSidebar">
+            <div class="quran-sidebar-header">
+                <i class="fas fa-book-quran"></i>
+                <span>Surahs</span>
+                <button class="quran-sidebar-close" id="quranSidebarClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="quran-sidebar-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="surahSearch" placeholder="Search surah..." autocomplete="off">
+            </div>
+            <div class="surah-list" id="surahList">
+                <div class="surah-loading"><i class="fas fa-spinner fa-spin"></i> Loading surahs...</div>
+            </div>
+        </aside>
+
+        <main class="quran-main">
+            <div class="quran-topbar">
+                <button class="quran-sidebar-toggle" id="quranSidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <span id="quranTopbarTitle">Select a Surah</span>
+            </div>
+
+            <div class="quran-reader" id="quranReader">
+                <div class="quran-welcome">
+                    <div class="welcome-icon"><i class="fas fa-book-quran"></i></div>
+                    <h2>Al-Quran</h2>
+                    <p>Select a surah from the sidebar to begin reading</p>
+                    <button class="btn btn-primary" id="randomSurahBtn">
+                        <i class="fas fa-shuffle"></i> Random Surah
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+You are building a modern Islamic AI website called "Iqra AI".
+
+PROJECT GOAL:
+Create a beautiful, modern, intelligent Islamic AI website focused on helping Muslim students and youth in Tanzania and East Africa using Islamic knowledge, Quran references, Hadith, prayer times, and motivational Islamic guidance.
+
+The website must be:
+- Beautiful and modern
+- Mobile friendly
+- Fast and responsive
+- Youth-focused
+- Student-friendly
+- Built using:
+  - HTML
+  - CSS
+  - JavaScript
+  - Python Flask backend
+
+IMPORTANT:
+This is NOT a mobile app.
+This is a WEBSITE.
+
+==================================================
+MAIN PURPOSE OF IQRA AI
+==================================================
+
+Iqra AI should help users with:
+- Islamic questions
+- Quran references
+- Hadith references
+- Daily duas
+- Prayer times
+- Islamic motivation
+- Student stress and emotional support
+- Islamic reminders
+- Quran search
+- Friendly Islamic AI conversation
+
+The AI should especially support:
+- Tanzanian students
+- Form four students
+- Form six students
+- University students
+- Muslim youth
+
+The AI should speak in:
+- Kiswahili
+- English
+- Friendly tone
+- Calm and respectful tone
+
+==================================================
+WEBSITE DESIGN REQUIREMENTS
+==================================================
+
+The design must look premium and modern.
+
+Use:
+- Dark mode
+- Glassmorphism effects
+- Smooth animations
+- Rounded corners
+- Soft shadows
+- Beautiful typography
+- Responsive design
+
+Color theme:
+- Black / dark navy background
+- Emerald green primary color
+- Gold accent color
+- White text
+
+Suggested colors:
+- #0f172a
+- #10b981
+- #facc15
+- #ffffff
+
+The UI should feel:
+- peaceful
+- futuristic
+- Islamic
+- elegant
+- youth friendly
+
+==================================================
+SECTIONS REQUIRED
+==================================================
+
+1. Hero Section
+- Beautiful headline:
+  "Iqra AI — Msaidizi wa Kiislamu kwa Vijana wa Tanzania"
+- Start Chat button
+- Quran button
+- Background glow or animation
+
+2. AI Chat Section
+- ChatGPT-style interface
+- User message bubble
+- AI message bubble
+- Typing animation
+- Scrollable chat
+- Input field
+- Send button
+
+3. Prayer Times Section
+Use:
+https://aladhan.com/prayer-times-api
+
+Features:
+- Detect city automatically
+- Show:
+  - Fajr
+  - Dhuhr
+  - Asr
+  - Maghrib
+  - Isha
+- Countdown to next prayer
+- Hijri date
+
+4. Quran Section
+Use:
+https://alquran.cloud/api
+and Quran.com references
+
+Features:
+- Search Quran verses
+- Search by topic
+- Show Arabic text
+- Show translation
+- Show Surah and Ayah number
+- Audio recitation
+- Beautiful Quran cards
+
+5. Daily Islamic Reminder
+- Daily ayah
+- Daily hadith
+- Daily dua
+
+6. Student Support Section
+Topics:
+- Stress
+- Depression
+- Discipline
+- Motivation
+- Exams
+- Relationships
+- Family
+- Anger
+- Anxiety
+
+The AI should answer using:
+- Quran
+- Hadith
+- Gentle advice
+- Encouragement
+
+==================================================
+BACKEND REQUIREMENTS
+==================================================
+
+Use Python Flask.
+
+Create:
+- app.py
+- API routes
+- JSON responses
+
+Frontend should communicate with Flask backend using fetch API.
+
+==================================================
+AI SYSTEM REQUIREMENTS
+==================================================
+
+The AI MUST:
+- Use trusted Islamic sources
+- Never invent fatwas
+- Never hallucinate Islamic rulings
+- Always provide references when possible
+- Say "I could not find an authentic Islamic reference" if unsure
+
+The AI should answer using:
+- Quran references
+- Hadith references
+- Islamic explanations
+- Compassionate language
+
+==================================================
+ISLAMIC SOURCES
+==================================================
+
+Use:
+- https://alquran.cloud/api
+- https://aladhan.com/prayer-times-api
+- https://quran.com
+- https://sunnah.com
+- https://islamqa.info/en
+- https://hadithapi.com
+
+==================================================
+TECHNICAL REQUIREMENTS
+==================================================
+
+Frontend:
+- HTML
+- CSS
+- Vanilla JavaScript
+
+Backend:
+- Python Flask
+
+Features:
+- Clean folder structure
+- Responsive design
+- Organized code
+- Smooth UI animations
+- Dark mode
+- Loading animations
+- Error handling
+
+==================================================
+FILE STRUCTURE
+==================================================
+
+/iqra-ai
+    index.html
+    style.css
+    script.js
+
+/backend
+    app.py
+
+==================================================
+AI PERSONALITY
+==================================================
+
+The AI personality should be:
+- Respectful
+- Wise
+- Friendly
+- Calm
+- Islamic
+- Helpful
+- Encouraging
+
+Example greeting:
+"As-salaam Alaikum, how can I help you today?"
+
+==================================================
+IMPORTANT RESTRICTIONS
+==================================================
+
+DO NOT:
+- Generate extremist content
+- Generate political religious conflicts
+- Invent Islamic rulings
+- Create fake hadith
+- Create fake Quran verses
+- Encourage hate or division
+
+KEEP THE PLATFORM:
+- Peaceful
+- Educational
+- Helpful
+- Inspirational
+- Student-friendly
+
+==================================================
+FINAL GOAL
+==================================================
+
+Build a complete modern Islamic AI website for Muslim students in Tanzania and East Africa that combines:
+- AI chatbot
+- Quran assistant
+- Prayer times
+- Islamic reminders
+- Student emotional support
+- Beautiful modern UI
+- Trusted Islamic references
+- Kiswahili support
+
+The final result should feel like a premium Islamic AI platform similar to ChatGPT but focused on Islam and helping Muslim youth.

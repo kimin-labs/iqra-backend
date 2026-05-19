@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iqra AI — Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="chat">
+
+    <div class="chat-layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-mosque sidebar-logo-img"></i>
+                    <span>Iqra AI</span>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <button class="new-chat-btn" id="newChatBtn">
+                <i class="fas fa-plus"></i> New Chat
+            </button>
+            <div class="conversations-list" id="conversationsList">
+                <div class="conv-loading"><i class="fas fa-spinner fa-spin"></i> Loading chats...</div>
+            </div>
+            <div class="sidebar-footer">
+                <div class="user-info" id="userInfo">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="usernameDisplay">User</span>
+                </div>
+                <div class="sidebar-footer-actions">
+                    <button class="sidebar-action-btn" id="settingsBtn" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="logout-btn" id="logoutBtn" title="Sign out">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-main" id="chatMain">
+            <div class="chat-topbar">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <span class="topbar-title" id="topbarTitle">New Chat</span>
+                </div>
+                <div class="topbar-brand">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+                <div class="topbar-hijri" id="topbarHijri">
+                    <i class="fas fa-calendar"></i>
+                    <span id="hijriDisplay">Loading...</span>
+                </div>
+            </div>
+
+            <div class="chat-area" id="chatArea">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="chat-welcome" id="chatWelcome">
+                        <div class="welcome-icon"><i class="fas fa-mosque"></i></div>
+                        <h2>Iqra AI</h2>
+                        <p>Salam Alaykum! What would you like to use Iqra AI for today?</p>
+                        <div class="welcome-suggestions">
+                            <button class="chip" data-text="Tell me about the five pillars of Islam">Five Pillars</button>
+                            <button class="chip" data-text="Give me a verse about patience">Patience in Quran</button>
+                            <button class="chip" data-text="Dua for exams">Dua for Exams</button>
+                            <button class="chip" data-text="How to deal with stress in Islam">Stress Relief</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-bar">
+                <div class="input-wrapper">
+                    <textarea class="chat-input" id="chatInput" placeholder="Message Iqra AI..." rows="1" autocomplete="off"></textarea>
+                    <button class="btn-send" id="sendBtn" aria-label="Send message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="input-disclaimer">Iqra AI may produce inaccurate information. Verify important Islamic rulings with a scholar.</p>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal glass settings-modal">
+            <div class="modal-header">
+                <button class="modal-back" id="settingsBack" style="display:none"><i class="fas fa-arrow-left"></i></button>
+                <i class="fas fa-cog" id="settingsModalIcon"></i>
+                <h3 id="settingsModalTitle">Settings</h3>
+                <button class="modal-close" id="settingsClose"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="settings-stepper">
+                <div class="step" data-step="1"><span class="step-num">1</span> Preferences</div>
+                <div class="step" data-step="2"><span class="step-num">2</span> Profile</div>
+                <div class="step" data-step="3"><span class="step-num">3</span> Password</div>
+            </div>
+
+            <div class="modal-body">
+                <div class="settings-slide active" id="slide1">
+                    <div class="setting-group">
+                        <label class="setting-label"><i class="fas fa-language"></i> Language</label>
+                        <select class="setting-select" id="langSelect">
+                            <option value="auto">Auto (Follow user)</option>
+                            <option value="en">English</option>
+                            <option value="sw">Kiswahili</option>
+                            <option value="ar">Arabic</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label class="setting-label"><i class="fas fa-font"></i> Font Size</label>
+                        <div class="setting-radio-group" id="fontSizeGroup">
+                            <button class="setting-radio" data-size="small">Small</button>
+                            <button class="setting-radio active" data-size="medium">Medium</button>
+                            <button class="setting-radio" data-size="large">Large</button>
+                        </div>
+                    </div>
+                    <div class="setting-group">
+                        <label class="setting-label"><i class="fas fa-palette"></i> Theme</label>
+                        <div class="setting-radio-group" id="themeGroup">
+                            <button class="setting-radio active" data-theme="dark">Dark</button>
+                            <button class="setting-radio" data-theme="light">Light</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary settings-next-btn" data-next="2">Next: Profile <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <div class="settings-slide" id="slide2">
+                    <div class="setting-group">
+                        <label class="setting-label"><i class="fas fa-user"></i> Username</label>
+                        <input class="form-input setting-input" id="profileUsername" type="text" placeholder="Your username">
+                    </div>
+                    <div class="setting-group">
+                        <label class="setting-label"><i class="fas fa-envelope"></i> Email</label>
+                        <input class="form-input setting-input" id="profileEmail" type="email" placeholder="Your email">
+                    </div>
+                    <div class="setting-error" id="profileError"></div>
+                    <button class="btn btn-primary settings-save-btn" id="saveProfileBtn"><i class="fas fa-save"></i> Save Changes</button>
+                    <button class="btn btn-secondary settings-next-btn" data-next="3">Next: Password <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <div class="settings-slide" id="slide3">
+                    <div class="setting-group">
+                        <label class="setting-label"><i class="fas fa-lock"></i> Current Password</label>
+                        <input class="form-input setting-input" id="currentPassword" type="password" placeholder="Enter current password">
+                    </div>
+                    <div class="setting-group">
+                        <label class="setting-label"><i class="fas fa-lock"></i> New Password</label>
+                        <input class="form-input setting-input" id="newPassword" type="password" placeholder="Enter new password">
+                    </div>
+                    <div class="setting-group">
+                        <label class="setting-label"><i class="fas fa-lock"></i> Confirm New Password</label>
+                        <input class="form-input setting-input" id="confirmPassword" type="password" placeholder="Confirm new password">
+                    </div>
+                    <div class="setting-error" id="passwordError"></div>
+                    <button class="btn btn-primary settings-save-btn" id="changePasswordBtn"><i class="fas fa-key"></i> Change Password</button>
+                </div>
+            </div>
+
+            <div class="settings-footer">
+                <div class="setting-info">
+                    <p><strong>Iqra AI</strong> v1.0 &mdash; Msaidizi wa Kiislamu kwa Vijana wa Tanzania</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>

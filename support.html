@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iqra AI — Student Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="support">
+
+    <nav class="navbar glass" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-mosque"></i>
+                <span>Iqra AI</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="prayer.html">Prayer Times</a>
+                <a href="quran.html">Quran</a>
+                <a href="prophets.html">Prophet Stories</a>
+                <a href="reminder.html">Daily Reminder</a>
+                <a href="support.html" class="active">Student Support</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-primary nav-login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section page-section" id="support">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-hand-holding-heart section-icon"></i>
+                <h2>Student Support</h2>
+                <p>Islamic guidance for life's challenges</p>
+            </div>
+            <div class="support-grid">
+                <button class="support-card glass" data-topic="stress">
+                    <i class="fas fa-brain"></i>
+                    <span>Stress</span>
+                </button>
+                <button class="support-card glass" data-topic="anxiety">
+                    <i class="fas fa-heart-crack"></i>
+                    <span>Anxiety</span>
+                </button>
+                <button class="support-card glass" data-topic="exams">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Exams</span>
+                </button>
+                <button class="support-card glass" data-topic="motivation">
+                    <i class="fas fa-fire"></i>
+                    <span>Motivation</span>
+                </button>
+                <button class="support-card glass" data-topic="discipline">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Discipline</span>
+                </button>
+                <button class="support-card glass" data-topic="depression">
+                    <i class="fas fa-cloud-rain"></i>
+                    <span>Depression</span>
+                </button>
+                <button class="support-card glass" data-topic="anger">
+                    <i class="fas fa-face-angry"></i>
+                    <span>Anger</span>
+                </button>
+                <button class="support-card glass" data-topic="relationships">
+                    <i class="fas fa-people-group"></i>
+                    <span>Relationships</span>
+                </button>
+                <button class="support-card glass" data-topic="family">
+                    <i class="fas fa-house-chimney"></i>
+                    <span>Family</span>
+                </button>
+            </div>
+            <div class="support-response glass" id="supportResponse" style="display:none;">
+                <div class="response-header">
+                    <i class="fas fa-mosque"></i>
+                    <span>Islamic Guidance</span>
+                    <button class="response-close" id="supportClose"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="response-body" id="supportBody"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="surah-marquee-container">
+        <div class="surah-marquee-track" id="surahMarqueeTrack">
+            <span class="surah-marquee-loading">Loading surahs...</span>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-mosque"></i>
+                    <h3>Iqra AI</h3>
+                    <p>Msaidizi wa Kiislamu kwa Vijana wa Tanzania</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="quran.html">Quran</a>
+                    <a href="prayer.html">Prayer Times</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="https://quran.com" target="_blank">Quran.com</a>
+                    <a href="https://sunnah.com" target="_blank">Sunnah.com</a>
+                    <a href="https://aladhan.com" target="_blank">Al-Adhan</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Iqra AI — Built with <i class="fas fa-heart" style="color: #10b981;"></i> for Muslim students</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
